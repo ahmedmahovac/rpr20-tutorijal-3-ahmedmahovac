@@ -1,17 +1,17 @@
 package ba.unsa.etf.rpr.tutorijal_3;
 
 public enum Grad {
-    SARAJEVO ("830"),
-    TUZLA("835"),
-    ZENICA("832"),
-    BRCKO("849"),
-    BIHAC("837"),
-    ORASJE("831"),
-    GORAZDE("838"),
-    LIVNO("834"),
-    SIROKI-BRIJEG("839"),
-        TRAVNIK("830"),
-            MOSTAR("836");
+    SARAJEVO ("033"),
+    TUZLA("035"),
+    ZENICA("032"),
+    BRCKO("049"),
+    BIHAC("037"),
+    ORASJE("031"),
+    GORAZDE("038"),
+    LIVNO("034"),
+    SIROKIBRIJEG("039"),
+        TRAVNIK("030"),
+            MOSTAR("036");
 
     private final String grad;
 
