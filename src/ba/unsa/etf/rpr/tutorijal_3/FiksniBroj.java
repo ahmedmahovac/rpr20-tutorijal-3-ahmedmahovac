@@ -25,6 +25,6 @@ public class FiksniBroj extends TelefonskiBroj{
   this.broj = broj;
     }
     public String ispisi() {
-   return grad.toString() + "/" + broj;
+   return grad.toString() + "/" + broj; // toString enuma se ovdje automatski poziva
     }
 }

@@ -10,6 +10,10 @@ public class MobilniBroj extends TelefonskiBroj{
         this.broj = broj;
     }
 
+    public String ispisi() {
+        return mobilnaMreza + "/" + broj;      //toString enuma se automatski poziva ovdje
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
