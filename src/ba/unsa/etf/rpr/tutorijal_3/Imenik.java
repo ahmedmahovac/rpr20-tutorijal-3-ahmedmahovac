@@ -25,5 +25,12 @@ public class Imenik {
    for(String br : brojevi.keySet()) if(g.getGrad().equals(br.substring(0,3)))  sortiranaImena.add(brojevi.get(br));
     return sortiranaImena;
     }
+    public Set<TelefonskiBroj> izGradaBrojevi(Grad g)
+    {
+        TreeSet<TelefonskiBroj> sortiraniBrojevi = new TreeSet<>();
+        for(String br : brojevi.keySet()) if(g.getGrad().equals(br.substring(0,3))) sortiraniBrojevi.add(br.substring(0,3));
+     return sortiraniBrojevi;
+    }
+
 
 }
