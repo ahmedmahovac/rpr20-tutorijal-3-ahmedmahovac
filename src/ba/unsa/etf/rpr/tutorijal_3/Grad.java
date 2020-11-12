@@ -17,6 +17,10 @@ public enum Grad {
 
     private Grad(String opis) {this.grad = opis;};
 
+    public String getGrad() {
+        return grad;
+    }
+
     @Override
     public String toString() {return grad;};
 
