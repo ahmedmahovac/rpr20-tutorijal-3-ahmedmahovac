@@ -3,8 +3,8 @@ package ba.unsa.etf.rpr.tutorijal_3;
 import java.util.Objects;
 
 public class FiksniBroj extends TelefonskiBroj implements Comparable<TelefonskiBroj>{
-    private Grad grad;
-    private String broj;
+    private final Grad grad;
+    private final String broj;
 
     public enum Grad {
         SARAJEVO("033"),
@@ -30,10 +30,18 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable<TelefonskiB
         }
 
         @Override
-        public String toString() {return grad;};
+        public String toString() {return grad;}
 
     }
 
+public Grad getGrad() {
+        return grad;
+}
+
+    @Override
+    public String toString() {
+        return ispisi();
+    }
 
 
     @Override
@@ -55,10 +63,6 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable<TelefonskiB
         return Objects.hash(grad, broj);
     }
 
-    @Override
-    public Grad getGrad() {
-        return grad;
-    }
 
     FiksniBroj(Grad grad, String broj) {
   this.grad = grad;

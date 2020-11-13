@@ -15,6 +15,14 @@ public class MobilniBroj extends TelefonskiBroj implements Comparable<Telefonski
         return mobilnaMreza + "/" + broj;      //toString enuma se automatski poziva ovdje
     }
 
+
+
+
+    @Override
+    public String toString() {
+        return ispisi();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
