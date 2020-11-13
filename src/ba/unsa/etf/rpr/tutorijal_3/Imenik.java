@@ -5,32 +5,51 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Imenik {
-  private HashMap<String, TelefonskiBroj> brojevi;
+  private HashMap<TelefonskiBroj, String> brojevi;
 
 
     void dodaj(String ime, TelefonskiBroj broj) {
-        brojevi.put(ime, broj);
+        brojevi.put(broj, ime);
     }
-  public  String dajBroj(String ime) {
-      return brojevi.get(ime).ispisi();
+  public String dajBroj(String ime) {
+      for(TelefonskiBroj t : brojevi.keySet()) if(brojevi.get(t).equals(ime)) return t.ispisi();
+      return null;
   }
 
     public String dajIme(TelefonskiBroj broj) {
-        for(String tmp : brojevi.keySet())  if(brojevi.get(tmp).equals(broj)) return tmp;
+        for(TelefonskiBroj t : brojevi.keySet())  if(brojevi.get(t).equals(broj)) return brojevi.get(t);
         return null;
     }
 
-  public  Set<String> izGrada(Grad g) {
+  public  Set<String> izGrada(FiksniBroj.Grad g) {
    TreeSet<String> sortiranaImena = new TreeSet<>();
-   for(String br : brojevi.keySet()) if(g.getGrad().equals(br.substring(0,3)))  sortiranaImena.add(brojevi.get(br));
+   for(TelefonskiBroj t : brojevi.keySet()) if(t instanceof FiksniBroj) ((FiksniBroj)t).getGrad().equals(g))  sortiranaImena.add(br);
     return sortiranaImena;
     }
-    public Set<TelefonskiBroj> izGradaBrojevi(Grad g)
+    public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g)
     {
-        TreeSet<TelefonskiBroj> sortiraniBrojevi = new TreeSet<>();
-        for(String br : brojevi.keySet()) if(g.getGrad().equals(br.substring(0,3))) sortiraniBrojevi.add(br.substring(0,3));
-     return sortiraniBrojevi;
+        TreeSet<TelefonskiBroj> imena = new TreeSet<>();
+        for(TelefonskiBroj t : brojevi.keySet())  if(t.getGrad()) imena.add(brojevi.get(br));
+     return imena;
     }
 
 
+    public String naSlovo(char c) {
+        String result = "";
+        for(String key : brojevi.keySet()) if(brojevi.get(key).charAt(0) == c) result+=(brojevi.get(key) + "-" + key + "\n");
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

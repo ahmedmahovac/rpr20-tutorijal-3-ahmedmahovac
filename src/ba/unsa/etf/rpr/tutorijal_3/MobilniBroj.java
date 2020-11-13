@@ -2,11 +2,12 @@ package ba.unsa.etf.rpr.tutorijal_3;
 
 import java.util.Objects;
 
-public class MobilniBroj extends TelefonskiBroj{
-    private String mobilnaMreza;
-    private String broj;
+public class MobilniBroj extends TelefonskiBroj implements Comparable<TelefonskiBroj>{
+    private final String mobilnaMreza;
+    private final String broj;
+
     MobilniBroj(int mobilnaMreza, String broj) {
-        this.mobilnaMreza = mobilnaMreza;
+        this.mobilnaMreza = "0" + mobilnaMreza;
         this.broj = broj;
     }
 
@@ -24,7 +25,19 @@ public class MobilniBroj extends TelefonskiBroj{
     }
 
     @Override
+    public int compareTo(TelefonskiBroj t) {
+       return ispisi().compareTo(t.ispisi());
+    }
+
+    public String getBroj() {
+        return broj;
+    }
+
+
+
+    @Override
     public int hashCode() {
         return Objects.hash(mobilnaMreza, broj);
     }
+
 }
